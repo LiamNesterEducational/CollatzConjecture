@@ -60,7 +60,7 @@ while num > 1: 				# Set to run to allow for the 4-2-1 loop
 print('Step, Value')			# Prints the column lables for the matrix
 print(MATRIX)				# Prints the matrix
 
-print('\n\nThe number of steps needed is:',step,)
+print('\n\nThe number of steps needed is:',step-1)
 
 print('\n\n==============================================================\n\n')
 

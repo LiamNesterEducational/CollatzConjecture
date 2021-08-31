@@ -1,40 +1,66 @@
-step = 0                                # Sets the first step value to be zero
-num = 4                                 # Dummy variable to allow the while loop to run
+'''
+This code analyzes the Collatz conjecture as detailed below:
 
-# Loop to iterate until the 4-2-1 pattern occurs
-while num > 1:                          # Set to run to allow for the 4-2-1 loop
+         n/2     -->   if  n ≡ 0 mod(2)
+f(n) = {                                }
+         3n+1    -->   if  n ≡ 1 mod(2)
+'''
 
-        if step == 0:
-
-                newNum = int(Even_or_Odd_func(input_num))       # Determines if the value is even or odd for the initial number
-                num = int(input_num)    # Saves the initial update as the recurring  variables
-
-        else:
-
-                newNum = int(Even_or_Odd_func(num))     # Determines if the value is even or odd
-
-        if newNum == 0:
-
-                num = int(num/2)        # Follows the conjecture rule for the even values
-
-        else:
-
-                num = int((3*num)+1)    # Follows the conjecture rule for the odd values
-
-        MATRIX[step, 0] = step          # Saves the step in the first column
-        MATRIX[step, 1] = num           # Saves the pattern value in the second column of the matrix
-
-        step = step + 1                 # Increases the step value for each loop
-
-print('Step, Value')                    # Prints the column lables for the matrix
-print(MATRIX)                           # Prints the matrix
-
-print('\n\nThe number of steps needed is:',step,)
+import numpy as np
+import matplotlib.pyplot as plt
 
 print('\n\n==============================================================\n\n')
 
-# Plots the steps vs values
-# plt.plot(MATRIX[:,0],MATRIX[:,1])
-# fig = plt.figure()
-# fig.savefig('test.png')
-# plt.show
+upperlimit = int(input('Select an upper limit:\n\n'))
+
+# Function to determine is a number is even or odd
+def Even_or_Odd_func(value):
+
+	modVal = value % 2 		# Checks to see if a number is even or odd || Even --> 0 ; Odd --> != 0
+
+	return(modVal)			# Returns the value from the modVal
+
+	print(modVal)			# Prints the modVal
+
+# Initializing empty matrix for value storage
+MATRIX = np.zeros((upperlimit+1,2), dtype = int)	# Sets and empty matrix
+
+print('\n\n==============================================================\n\n')
+
+# Select a number to determine the number of steps for the conjecture
+for x in range (1,upperlimit):
+
+	# Initializing step value to determine the total number of steps needed until thr 4-2-1 loop
+	step = 0				# Sets the first step value to be zero
+	num = 4					# Dummy variable to allow the while loop to run
+
+	# Loop to iterate until the 4-2-1 pattern occurs
+	while num > 1: 				# Set to run to allow for the 4-2-1 loop
+
+		if step == 0:
+
+			newNum = int(Even_or_Odd_func(x))	# Determines if the value is even or odd for the initial number
+			num = int(x)	# Saves the initial update as the recurring  variables
+
+		else:
+
+			newNum = int(Even_or_Odd_func(num))	# Determines if the value is even or odd
+
+		if newNum == 0:
+
+			num = int(num/2)	# Follows the conjecture rule for the even values
+
+		else:
+
+			num = int((3*num)+1)	# Follows the conjecture rule for the odd values
+
+		MATRIX[x, 1] = step		# Saves the number of steps needed
+		
+		step = step + 1			# Increases the step value for each loop
+
+	MATRIX[x, 0] = x		# Saves the number at hand in the first column
+
+print('Number, No. of Steps')	# Prints the column lables for the matrix
+print(MATRIX)					# Prints the matrix
+
+print('\n\n==============================================================\n\n')
