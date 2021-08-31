@@ -8,10 +8,11 @@ f(n) = {                                }
 
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 print('\n\n==============================================================\n\n')
 
-upperlimit = int(input('Select an upper limit:\n\n'))
+upperlimit = int(input('Select an upper limit:\n\n'))+1
 
 # Function to determine is a number is even or odd
 def Even_or_Odd_func(value):
@@ -23,7 +24,7 @@ def Even_or_Odd_func(value):
 	print(modVal)			# Prints the modVal
 
 # Initializing empty matrix for value storage
-MATRIX = np.zeros((upperlimit+1,2), dtype = int)	# Sets and empty matrix
+MATRIX = np.zeros((upperlimit,2), dtype = int)	# Sets and empty matrix
 
 print('\n\n==============================================================\n\n')
 
@@ -54,7 +55,13 @@ for x in range (1,upperlimit):
 
 			num = int((3*num)+1)	# Follows the conjecture rule for the odd values
 
-		MATRIX[x, 1] = step		# Saves the number of steps needed
+		if step == 0:
+                        
+                        MATRIX[x, 1] = step     	# Saves the number of steps needed
+
+                else:
+                        
+                        MATRIX[x, 1] = math.log(step)     	# Saves the number of steps needed
 		
 		step = step + 1			# Increases the step value for each loop
 
@@ -64,3 +71,12 @@ print('Number, No. of Steps')	# Prints the column lables for the matrix
 print(MATRIX)					# Prints the matrix
 
 print('\n\n==============================================================\n\n')
+
+# Plots the steps vs values
+plt.plot(MATRIX[:,0],MATRIX[:,1],marker='x',linestyle='dashed',linewidth = 1)
+plt.xlabel('Input Number')
+plt.ylabel('Stopping Step')
+plt.gcf()
+plt.savefig('Range.png')
+
+print('Figure Saved\n\n')

@@ -26,7 +26,7 @@ def Even_or_Odd_func(value):
 	print(modVal)			# Prints the modVal
 
 # Initializing empty matrix for value storage
-MATRIX = np.zeros((25,2), dtype = int)	# Sets and empty matrix
+MATRIX = np.zeros((150,2), dtype = int)	# Sets and empty matrix
 
 # Initializing step value to determine the total number of steps needed until thr 4-2-1 loop
 step = 0				# Sets the first step value to be zero
@@ -57,8 +57,8 @@ while num > 1: 				# Set to run to allow for the 4-2-1 loop
 
 	step = step + 1			# Increases the step value for each loop
 
-print('Step, Value')			# Prints the column lables for the matrix
-print(MATRIX)				# Prints the matrix
+# print('Step, Value')			# Prints the column lables for the matrix
+# print(MATRIX)				# Prints the matrix
 
 print('\n\nThe number of steps needed is:',step-1)
 
@@ -66,9 +66,10 @@ print('\n\n==============================================================\n\n')
 
 # Plots the steps vs values
 plt.plot(MATRIX[:,0],MATRIX[:,1])
-# fig = plt.figure()
+plt.xlabel('Input Number')
+plt.ylabel('Stopping Step')
 plt.gcf()
-plt.savefig('Figure.png')
-# plt.show
+plt.savefig('SingleNumber.png')
+
 
 print('Figure Saved\n\n')
