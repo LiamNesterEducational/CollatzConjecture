@@ -54,23 +54,29 @@ for x in range (1,upperlimit):
 		else:
 
 			num = int((3*num)+1)	# Follows the conjecture rule for the odd values
-                        
-		MATRIX[x, 1] = step	# Saves the number of steps needed
+
+		if step == 0:
+
+			MATRIX[x, 1] = step	# Saves the number of steps needed
+
+		else:
+
+			MATRIX[x,1] = np.log(step)
                 		
 		step = step + 1	# Increases the step value for each loop
 
-	MATRIX[x, 0] = x		# Saves the number at hand in the first column
+	MATRIX[x, 0] = np.log(x)		# Saves the number at hand in the first column
 
-print('Number, No. of Steps')	        # Prints the column lables for the matrix
-print(MATRIX)				# Prints the matrix
+# print('Number, No. of Steps')	        # Prints the column lables for the matrix
+# print(MATRIX)				# Prints the matrix
 
-print('\n\n==============================================================\n\n')
+# print('\n\n==============================================================\n\n')
 
 # Plots the steps vs values
-plt.plot(MATRIX[:,0],MATRIX[:,1],marker='x',linestyle='dashed',linewidth = 1)
+plt.plot(MATRIX[:,0],MATRIX[:,1],marker='.',linestyle='none',linewidth = 1)
 plt.xlabel('Input Number')
 plt.ylabel('Stopping Step')
 plt.gcf()
-plt.savefig('Range.png')
+plt.savefig('0thru100000_log.png')
 
 print('Figure Saved\n\n')
