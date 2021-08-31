@@ -54,21 +54,15 @@ for x in range (1,upperlimit):
 		else:
 
 			num = int((3*num)+1)	# Follows the conjecture rule for the odd values
-
-		if step == 0:
                         
-                        MATRIX[x, 1] = step     	# Saves the number of steps needed
-
-                else:
-                        
-                        MATRIX[x, 1] = math.log(step)     	# Saves the number of steps needed
-		
-		step = step + 1			# Increases the step value for each loop
+		MATRIX[x, 1] = step	# Saves the number of steps needed
+                		
+		step = step + 1	# Increases the step value for each loop
 
 	MATRIX[x, 0] = x		# Saves the number at hand in the first column
 
-print('Number, No. of Steps')	# Prints the column lables for the matrix
-print(MATRIX)					# Prints the matrix
+print('Number, No. of Steps')	        # Prints the column lables for the matrix
+print(MATRIX)				# Prints the matrix
 
 print('\n\n==============================================================\n\n')
 
