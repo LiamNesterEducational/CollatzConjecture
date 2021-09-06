@@ -36,20 +36,20 @@ The graphs below show how many steps it takes for a number to reach 1...
 
 |  |  |
 | :-------: | :-------: |
-| 0 through 100![](./0thru100.png) | 0 through 250 ![](./0thru250.png) |
-| 0 through  1,000![](./0thru1000.png) | 0 through 4,000 ![](./0thru4000.png)
-| 0 through 10,000 ![](./0thru9999.png) | 0 through 20,000 ![](./0thru20000.png) |
-| 0 through 100,000 ![](./0thru100000.png) | 0 through 500,000 ![](./0thru500000.png) |
+| 0 through 100![](./src/0thru100.png) | 0 through 250 ![](./src/0thru250.png) |
+| 0 through  1,000![](./src/0thru1000.png) | 0 through 4,000 ![](./src/0thru4000.png)
+| 0 through 10,000 ![](./src/0thru9999.png) | 0 through 20,000 ![](./src/0thru20000.png) |
+| 0 through 100,000 ![](./src/0thru100000.png) | 0 through 500,000 ![](./src/0thru500000.png) |
 
 The graphs below shows the progression for a number to reach 1... 
 
 |  |  |
 | :-------: | :-------: |
-| ![](./SingleNumber_10.png) | ![](./SingleNumber_50.png) |
-| ![](./SingleNumber_100.png) | ![](./SingleNumber_250.png) |
-| ![](./SingleNumber_500.png) | ![](./SingleNumber_1000.png) |
-| ![](./SingleNumber_5000.png) | ![](./SingleNumber_10000.png) | 
-| ![](./SingleNumber_100000.png) |![](./SingleNumber_1000000.png) |
+| ![](./src/SingleNumber_10.png) | ![](./src/SingleNumber_50.png) |
+| ![](./src/SingleNumber_100.png) | ![](./src/SingleNumber_250.png) |
+| ![](./src/SingleNumber_500.png) | ![](./src/SingleNumber_1000.png) |
+| ![](./src/SingleNumber_5000.png) | ![](./src/SingleNumber_10000.png) | 
+| ![](./src/SingleNumber_100000.png) |![](./src/SingleNumber_1000000.png) |
 
 </center>
 
