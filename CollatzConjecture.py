@@ -26,7 +26,7 @@ def Even_or_Odd_func(value):
 	print(modVal)			# Prints the modVal
 
 # Initializing empty matrix for value storage
-MATRIX = np.zeros((150,2), dtype = int)	# Sets and empty matrix
+MATRIX = np.zeros((200,2), dtype = int)	# Sets and empty matrix
 
 # Initializing step value to determine the total number of steps needed until thr 4-2-1 loop
 step = 0				# Sets the first step value to be zero
@@ -53,23 +53,26 @@ while num > 1: 				# Set to run to allow for the 4-2-1 loop
 		num = int((3*num)+1)	# Follows the conjecture rule for the odd values
 
 	MATRIX[step, 0] = step		# Saves the step in the first column
-	MATRIX[step, 1] = num		# Saves the pattern value in the second column of the matrix
+	MATRIX[step+1, 1] = num		# Saves the pattern value in the second column of the matrix
 
 	step = step + 1			# Increases the step value for each loop
 
-# print('Step, Value')			# Prints the column lables for the matrix
-# print(MATRIX)				# Prints the matrix
+MATRIX[0,1] = input_num
+MATRIX[step,0] = int(step)
+print('Step, Value')			# Prints the column lables for the matrix
+print(MATRIX)				# Prints the matrix
 
 print('\n\nThe number of steps needed is:',step-1)
 
 print('\n\n==============================================================\n\n')
 
 # Plots the steps vs values
-plt.plot(MATRIX[:,0],MATRIX[:,1])
-plt.xlabel('Input Number')
-plt.ylabel('Stopping Step')
+plt.plot(MATRIX[0:153,0],MATRIX[0:153,1],marker='.',linestyle='-',linewidth = 1)
+plt.title('Input Number is: 1000000')
+plt.ylabel('Value')
+plt.xlabel('Stopping Step')
 plt.gcf()
-plt.savefig('SingleNumber.png')
+plt.savefig('SingleNumber_1000000.png')
 
 
 print('Figure Saved\n\n')

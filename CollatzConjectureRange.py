@@ -65,7 +65,7 @@ for x in range (1,upperlimit):
                 		
 		step = step + 1	# Increases the step value for each loop
 
-	MATRIX[x, 0] = np.log(x)		# Saves the number at hand in the first column
+	MATRIX[x, 0] = x #np.log(x)		# Saves the number at hand in the first column
 
 # print('Number, No. of Steps')	        # Prints the column lables for the matrix
 # print(MATRIX)				# Prints the matrix
