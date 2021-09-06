@@ -66,6 +66,10 @@ Unfortunately, to this day, there has not been any major patters found for this 
 
 ***Stay tuned for more!***
 
+<p align="center">
+  <a href="https://liamnester.github.io/" </a><img width="200" src="././src/LiamNesterLogo.png"  >
+</p>
+
 </center>
 
 ---
